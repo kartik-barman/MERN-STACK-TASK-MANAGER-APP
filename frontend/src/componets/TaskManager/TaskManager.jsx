@@ -9,7 +9,7 @@ const TaskManager = () => {
     const [editingTask, setEditingTask] = useState(null);
 
     const handleAddTask = async () => {
-        const uri = "http://localhost:5000/api/tasks/createTask";
+        const uri = "https://mern-stack-task-manager-app-api.vercel.app/api/tasks/createTask";
         const obj = {
             taskName: data,
             isDone: false,
@@ -41,7 +41,7 @@ const TaskManager = () => {
     };
 
     const getAllTask = async () => {
-        const uri = "http://localhost:5000/api/tasks/getTask";
+        const uri = "https://mern-stack-task-manager-app-api.vercel.app/api/tasks/getTask";
         try {
             const response = await fetch(uri);
             const result = await response.json();
@@ -58,7 +58,7 @@ const TaskManager = () => {
 
     const handleUpdateTask = async () => {
         if (!editingTask) return;
-        const uri = `http://localhost:5000/api/tasks/updateTask/${editingTask._id}`;
+        const uri = `https://mern-stack-task-manager-app-api.vercel.app/api/tasks/updateTask/${editingTask._id}`;
         const obj = {
             taskName: data,
             isDone: editingTask.isDone,
@@ -91,7 +91,7 @@ const TaskManager = () => {
     };
 
     const handleDeleteTask = async (id) => {
-        const uri = `http://localhost:5000/api/tasks/deleteTask/${id}`;
+        const uri = `https://mern-stack-task-manager-app-api.vercel.app/api/tasks/deleteTask/${id}`;
         const options = {
             method: "DELETE",
         };
@@ -113,7 +113,7 @@ const TaskManager = () => {
 
    
     const handleToggleTask = async (task) => {
-        const uri = `http://localhost:5000/api/tasks/updateTask/${task._id}`;
+        const uri = `https://mern-stack-task-manager-app-api.vercel.app/api/tasks/updateTask/${task._id}`;
         const updatedTask = {
             ...task,
             isDone: !task.isDone, 
