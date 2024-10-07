@@ -143,6 +143,13 @@ const TaskManager = () => {
         }
     };
 
+      const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            editingTask ? handleUpdateTask() : handleAddTask();
+        }
+    };
+
+
     useEffect(() => {
         getAllTask();
     }, []);
